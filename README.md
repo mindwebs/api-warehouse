@@ -3,6 +3,7 @@ The API Store for All Application &amp; Backend Frameworks of ongoing &amp; past
 
 ## Basic Setup
 NoSql is being used as the primary database framework. The database will be hosted on DynamoDB.
+You can use **Python, PHP, NodeJS**. Please make sure you add the comments to describe your function.
 
 ## Features Required
 ### 1. An API for Fetching Latest News/Updates
