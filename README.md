@@ -12,7 +12,7 @@ The main aim of web scraping is to cache relevant content and display it to our 
 
 ### 2. Web Scraping API for Event Fetching
 This will be similar to API 1 but in this case it will pull event details from various sites like [BookMyShow](#), [PayTM Insider](#) and other similar ticket or event booking platforms.  
-It will orderly arrange them to the database every day on the basis of relevance and keeping important information like **Price**, **Event Name**, **Ticket URL**, **Location**, **Event Type** and other relevant details.  
+It will fetch important information like **Price**, **Event Name**, **Ticket URL**, **Location**, **Event Type** and other relevant details.   
 
 ### 3. API to Show & Compare Events
 This will take the Event Name/Location/Category/Date and check the events database and sort the events on basis of user query.  
