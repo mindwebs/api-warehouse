@@ -2,7 +2,10 @@
 The API Store for All Application &amp; Backend Frameworks of ongoing &amp; past projects.
 
 ## Basic Setup
-NoSql is being used as the primary database framework. The database will be hosted on DynamoDB.
+NoSql is being used as the primary database framework.  
+So for the database, you are free to use **any NOSQL Database**. Make a local database and share the database format in your repo too.  
+You can, for example, make a local database on a local instance of mongo in your system and share the configuration with us. We will port it to our specified database when we will integrate it. Your focus should be on the API.  
+The final database will be hosted on DynamoDB.  
 You can use **Python, PHP, NodeJS**. Please make sure you add the comments to describe your function.
 
 ## Features Required
