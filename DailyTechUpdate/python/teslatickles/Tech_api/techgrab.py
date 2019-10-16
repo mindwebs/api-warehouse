@@ -1,7 +1,9 @@
 from py_get import simple_get
 from bs4 import BeautifulSoup
-from selenium import webdriver
 import json
+import atexit
+
+print("Scraping tech articles...")
 
 raw_html = simple_get('https://techurls.com/')
 html = BeautifulSoup(raw_html, 'html.parser')
@@ -16,13 +18,19 @@ article = {
 }
 articles = []
 
-for index, data in enumerate(links):
+for data in links:
     article["publisher"] = data["data-publisher"]
 
-for index, data in enumerate(hrefs):
+for data in hrefs:
     article["link"] = data["href"]
     article["title"] = data.text
     articles.append(dict(article))
 
 with open('techlinks.txt', 'w') as outputfile:
     json.dump(articles, outputfile)
+
+
+def exiting():
+    print("Finished scraping tech articles")
+
+atexit.register(exiting)
