@@ -1,5 +1,9 @@
-let fetchEventsBookmyShow = require("./api").fetchEventsBookmyShow;
+let APIS = require("./api");
 
 
-//calling the function
-fetchEventsBookmyShow();
+//calling the function of paytm
+APIS.fetchEventsPaytm();
+
+
+//calling the function of paytm
+APIS.fetchEventsBookmyShow();
