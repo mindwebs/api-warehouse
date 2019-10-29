@@ -29,15 +29,52 @@ let fetchEventsBookmyShow = ()=>{
                 })
             });
             //writing into file
-            fs.writeFile("./output.json",JSON.stringify(result), function(err) {
+            fs.writeFile("./output-bookmyshow.json",JSON.stringify(result), function(err) {
                 if(err) {
                     console.log(`Error occured : ${err}`);
                 }
-                console.log("Data saved in output.json file");
+                console.log("Data saved in output-bookmyshow.json file");
             }); 
         }
     });
 }
 
+
+
+//fetching events from paytm
+let fetchEventsPaytm = ()=>{
+    let url = `https://paytm.com/events/kolkata/`;
+    //making http requesto to paytm server for events of kolkata
+    request(url,(err,res,html)=>{
+        if(err){
+            console.log(`Error occured : ${err}`);
+        }
+        else{
+            //parse the html using cheerio
+            let $ = cheerio.load(html);
+            let result = [];
+            //traverse to scrap all the details
+            $('#events_list ul li').map(function(){
+                let dd = $(this).children();
+                result.push({
+                    event_date : $($($(dd.children()[2]).children()[0]).children()[1]).text(),
+                    event_name : $($($(dd.children()[2]).children()[0]).children()[0]).text(),                    
+                    event_location : $(dd.children()[3]).children().text(),
+                    event_type : $(dd.children()[0]).text(),
+                    event_fees : $($($(dd.children()[2]).children()[1]).children()[0]).text().replace('Onwards','').replace('Rs.','')
+                })
+            }); 
+            //writing into file
+            fs.writeFile("./output-paytm.json",JSON.stringify(result), function(err) {
+                if(err) {
+                    console.log(`Error occured : ${err}`);
+                }
+                console.log("Data saved in output-paytm.json file");
+            });
+        }
+    });
+}
+
+
  
-module.exports = {fetchEventsBookmyShow}
+module.exports = {fetchEventsBookmyShow, fetchEventsPaytm}
