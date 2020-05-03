@@ -29,7 +29,6 @@ To contribute, fork this repository, Add your files under a subfolder named afte
 After you are done, add your name to the [Contribution File](CONTRIBUTION.md). You will find more instructions over there.  
 After you are done with the above commits, create a Pull Request and wait for the confirmation.
 
-##### Its Hacktober Fest Time, so abide by their guidelines to get free goodies for yourself. Do star this repo, if the contribution counts towards Hacktober Fest. 
 
 #### Spread OpenSource Love! Thanks
 
