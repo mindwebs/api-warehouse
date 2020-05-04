@@ -4,7 +4,7 @@ Contains ExpressJS based simple regression model that returns **Linear** or **Po
 
 ### Steps to Install
 ``cd nodejs``  
-``npm i``
+``npm i``  
 ``node app.js``
 
 ## Requests
