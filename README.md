@@ -1,4 +1,4 @@
-# API-WareHouse
+# API WareHouse
 The API Store for All Application &amp; Backend Frameworks of ongoing &amp; past projects.
 
 ## Basic Setup
@@ -8,20 +8,17 @@ You can, for example, make a local database on a local instance of mongo in your
 The final database will be hosted on DynamoDB.  
 You can use **Python, PHP, NodeJS**. Please make sure you add the comments to describe your function.
 
-## Features Required
-### 1. An API for Fetching Latest News/Updates
-This API will fetch news content from various websites like [Times of India](https://timesofindia.indiatimes.com/), [Gadget News NDTV](https://gadgets.ndtv.com/news), [Hindustan Times](https://www.hindustantimes.com), etc.  
-These web scraped contents will be stored in the database along with important fields like **Web URL**, **Date**, **Category** (like Tech, Education, etc.).  
-The main aim of web scraping is to cache relevant content and display it to our users on the basis of their interests.  
+## Folder Structure
+Each API will have a folder containing either or all three sub-folder (python, php or nodejs). Required dependencies are to be added in the **Readme.MD** file under Requirements.  
+All folders must have a Readme file describing the matter of the folder and its various requirements, models, parameters, etc.  
+Once a new folder is added, please make sure you add that feature over here under the APIs List with Proper Readme linkage.
 
-### 2. Web Scraping API for Event Fetching
-This will be similar to API 1 but in this case it will pull event details from various sites like [BookMyShow](#), [PayTM Insider](#) and other similar ticket or event booking platforms.  
-It will fetch important information like **Price**, **Event Name**, **Ticket URL**, **Location**, **Event Type** and other relevant details.   
-
-### 3. API to Show & Compare Events
-This will take the Event Name/Location/Category/Date and check the events database and sort the events on basis of user query.  
-If no input is provided then, will sort the event on basis of Location, Date and Rating Combined.  
-This will have another feature that, if there is instance of an event data fetched from two or more sites (say the event being hosted in multiple sites), then It will compare and show the Link Providing the lowest price. And will also send the additional Links of other sites hosting the event. But the main content will be from the one hosting it at the cheapest.
+## APIs List
+1. An API for Fetching Latest News/Updates  
+2. Web Scraping API for Event Fetching
+3. API to Show & Compare Events (Required)
+4. Send Email API
+5. Send SMS API
 
 ## Contribution 
 Anyone can contribute to this project and we will be providing links to their Github Profiles in our final application as tribute to the contribution.
