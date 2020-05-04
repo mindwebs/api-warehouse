@@ -1,0 +1,17 @@
+{
+  "name": "linear-regression",
+  "version": "1.0.0",
+  "description": "Simple Linear Regression Backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Dipan Roy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "regression": "^2.0.1",
+    "simple-statistics": "^7.0.9"
+  }
+}

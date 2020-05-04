@@ -1,0 +1,6 @@
+POST http://localhost:5000/linearConsts
+Content-Type: application/json
+
+{
+    "array": "[[0, 1], [1, 2], [2, 3]]"
+}

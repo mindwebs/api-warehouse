@@ -1,0 +1,8 @@
+POST http://localhost:5000/polyGetY
+Content-Type: application/json
+
+{
+    "array": "[[0,1], [32, 67], [12, 79]]",
+    "order": 3,
+    "x": 32
+}
