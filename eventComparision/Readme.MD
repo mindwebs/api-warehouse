@@ -1,0 +1,4 @@
+# API to Show & Compare Events (Required)
+This will take the Event Name/Location/Category/Date and check the events database and sort the events on basis of user query.  
+If no input is provided then, will sort the event on basis of Location, Date and Rating Combined.  
+This will have another feature that, if there is instance of an event data fetched from two or more sites (say the event being hosted in multiple sites), then It will compare and show the Link Providing the lowest price. And will also send the additional Links of other sites hosting the event. But the main content will be from the one hosting it at the cheapest.
