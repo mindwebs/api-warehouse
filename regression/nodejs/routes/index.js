@@ -24,29 +24,35 @@ router.post('/linearConsts', async (req, res) => {
 router.post('/getY', async (req, res) => {
     const { array } = req.body;
     const { x } = req.body;
-    let data = JSON.parse(array);
+    try{
+        let data = JSON.parse(array);
+        const lnr = ss.linearRegression(data);
+        const m = lnr.m;
+        const b = lnr.b;
 
-    const lnr = ss.linearRegression(data);
-    const m = lnr.m;
-    const b = lnr.b;
+        let y = (m*x + b).toFixed(2);
 
-    let y = (m*x + b).toFixed(2);
-
-    return res.status(200).json({ y });
+        return res.status(200).json({ y });
+    } catch (e) {
+        return res.status(500).json(`Server responded with an error: ${e}`);
+    }
 });
 
 router.post('/getX', async (req, res) => {
     const { array } = req.body;
     const { y } = req.body;
-    let data = JSON.parse(array);
+    try{
+        let data = JSON.parse(array);
+        const lnr = ss.linearRegression(data);
+        const m = lnr.m;
+        const b = lnr.b;
 
-    const lnr = ss.linearRegression(data);
-    const m = lnr.m;
-    const b = lnr.b;
+        let x = ((y - b)/m).toFixed(2);
 
-    let x = ((y - b)/m).toFixed(2);
-
-    return res.status(200).json({ x });
+        return res.status(200).json({ x });
+    } catch(e){
+        return res.status(500).json(`Server responded with an error: ${e}`);
+    }
 });
 
 router.post('/polyConsts', async (req, res) => {
@@ -73,15 +79,18 @@ router.post('/polyGetY', async (req, res) => {
     const { order } = req.body;
     const { x } = req.body;
     let val = 0;
+    try{
+        const result = regression.polynomial(data, { order });
+        let constants = result.equation;
+        for(let i=0; i <= order; i++) {
+            val += (constants[i] * Math.pow(x, order - i));
+        }
 
-    const result = regression.polynomial(data, { order });
-    let constants = result.equation;
-    for(let i=0; i <= order; i++) {
-        val += (constants[i] * Math.pow(x, order - i));
+        let y = val.toFixed(2);
+        return res.status(200).json({ y });
+    } catch (e) {
+        return res.status(500).json(`Server responded with an error: ${e}`);
     }
-
-    let y = val.toFixed(2);
-    return res.status(200).json({ y });
 });
 
 module.exports = router;
